@@ -135,8 +135,6 @@ if my_upload is not None:
         st.error(f"The uploaded file is too large. Please upload an image smaller than {MAX_FILE_SIZE/1024/1024:.1f}MB.")
     else:
         fix_image(upload=my_upload)
-        if st.sidebar.button("Retry"):
-            fix_image(upload=my_upload)
             
 else:
     # Try default images in order of preference

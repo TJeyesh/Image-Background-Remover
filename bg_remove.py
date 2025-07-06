@@ -134,12 +134,6 @@ if my_upload is not None:
     if my_upload.size > MAX_FILE_SIZE:
         st.error(f"The uploaded file is too large. Please upload an image smaller than {MAX_FILE_SIZE/1024/1024:.1f}MB.")
     else:
-        # Save uploaded file to a folder
-        save_folder = "uploaded_images"
-        os.makedirs(save_folder, exist_ok=True)
-        save_path = os.path.join(save_folder, my_upload.name)
-        with open(save_path, "wb") as f:
-            f.write(my_upload.getvalue())
         fix_image(upload=my_upload)
             
 else:
